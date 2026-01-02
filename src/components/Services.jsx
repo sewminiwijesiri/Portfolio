@@ -15,24 +15,24 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="relative py-32 bg-[#020617] overflow-hidden">
+    <section id="services" className="relative py-20 bg-[#020617] overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 lg:px-24">
         <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           transition={{ duration: 0.8 }}
-           className="mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-10"
         >
-          <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-[10px] font-black tracking-widest rounded-md mb-6 uppercase">
+          <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-[10px] font-black tracking-widest rounded-md mb-4 uppercase">
             SERVICES
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tighter mb-4 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-4 leading-tight">
             DESIGN <span className="text-accent">SERVICES</span> I AM PROVIDING
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, idx) => (
             <motion.div
               key={idx}
@@ -40,13 +40,13 @@ const Services = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: idx * 0.1 }}
-              className="p-10 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-white/10 transition-all duration-300 group"
+              className="p-8 bg-white/5 border border-white/10 rounded-[2rem] hover:bg-white/10 transition-all duration-300 group"
             >
-              <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center text-accent mb-8 group-hover:scale-110 transition-transform">
-                {service.icon}
+              <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
+                {React.cloneElement(service.icon, { size: 24 })}
               </div>
-              <h4 className="text-xl font-black text-white mb-4 uppercase tracking-tighter">{service.name}</h4>
-              <p className="text-gray-400 text-sm font-medium leading-relaxed">
+              <h4 className="text-lg font-black text-white mb-2 uppercase tracking-tighter">{service.name}</h4>
+              <p className="text-gray-400 text-xs font-medium leading-relaxed">
                 {service.items}
               </p>
             </motion.div>

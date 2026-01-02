@@ -30,17 +30,17 @@ const Contact = () => {
               <ContactInfo icon={<MapPin size={24} />} label="Location" value="Sri Lanka" />
             </div>
 
-            <motion.div 
+            <motion.div
               className="mt-20"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              <a 
+              <a
                 href="mailto:sewminiwijesir5@gmail.com"
-                className="inline-flex items-center gap-4 px-12 py-5 bg-accent text-white text-xs font-black tracking-[0.3em] uppercase rounded-full hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-accent/20"
+                className="inline-flex items-center px-12 py-5 bg-accent text-white text-xs font-black tracking-[0.3em] uppercase rounded-full hover:scale-105 active:scale-95 transition-all shadow-2xl shadow-accent/20"
               >
-                Start a Conversation <ArrowRight size={18} />
+                Start a Conversation
               </a>
             </motion.div>
           </motion.div>

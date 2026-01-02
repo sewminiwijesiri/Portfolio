@@ -31,7 +31,7 @@ const Hero = () => {
       {/* Background patterns */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/3 z-0" />
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-accent/5 blur-[80px] rounded-full translate-y-1/3 -translate-x-1/3 z-0" />
-      
+
       <div className="container mx-auto px-6 md:px-12 lg:px-24 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-20">
           {/* Left Content */}
@@ -42,7 +42,7 @@ const Hero = () => {
               transition={{ duration: 0.6 }}
             >
               <span className="inline-block px-4 py-1.5 bg-accent/10 text-accent text-[11px] font-black tracking-widest rounded-md mb-6 uppercase">
-                Sewmini 
+                Sewmini
               </span>
               <h1 className="text-5xl md:text-4xl lg:text-5xl font-black text-white tracking-tighter mb-4 leading-tight">
                 HAY! I'M <span className="text-white">SEWMINI</span>
@@ -55,17 +55,17 @@ const Hero = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start">
-                <button 
+                <button
                   onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                   className="px-10 py-4 bg-accent hover:bg-accent/90 text-white text-xs font-black tracking-widest rounded-full transition-all shadow-xl shadow-accent/20 hover:scale-105 active:scale-95"
                 >
-                  GET IN TOUCH →
+                  GET IN TOUCH
                 </button>
-                
+
                 <div className="flex items-center gap-4">
                   <SocialIcon href="https://github.com/sewminiwijesiri" icon={<Github size={18} />} />
                   <SocialIcon href="https://www.linkedin.com/in/sewmini-wijesiri/" icon={<Linkedin size={18} />} />
-                
+
                 </div>
               </div>
             </motion.div>
@@ -83,16 +83,16 @@ const Hero = () => {
               <div className="absolute inset-0 border-[1px] border-accent/20 rounded-full animate-spin-slow" />
               <div className="absolute inset-[10%] border-[2px] border-dashed border-white/5 rounded-full animate-reverse-spin" />
               <div className="absolute inset-[10%] border-[1px] border-accent/10 rounded-full" />
-              
+
               {/* Floating Spheres */}
               <div className="absolute top-10 -left-5 w-16 h-16 bg-gradient-to-br from-gray-700 to-black rounded-full shadow-2xl animate-float-slow z-20" />
               <div className="absolute bottom-20 -right-10 w-24 h-24 bg-gradient-to-br from-gray-800 to-black rounded-full shadow-2xl animate-float z-20" />
-              
+
               {/* Main Image Container */}
               <div className="relative w-[80%] h-[80%] rounded-full overflow-hidden border-4 border-white/10 shadow-[0_0_50px_rgba(56,189,248,0.2)] flex items-center justify-center z-10 bg-[#0a0a0a]">
                 {/* Background Pattern behind image */}
                 <div className="absolute inset-0 bg-gradient-to-b from-accent/10 via-transparent to-transparent opacity-50" />
-                
+
                 <Image
                   src="/images/Me.jpeg"
                   alt="Sewmini Wijesiri"
@@ -111,9 +111,9 @@ const Hero = () => {
 };
 
 const SocialIcon = ({ icon, href }) => (
-  <a 
-    href={href} 
-    target="_blank" 
+  <a
+    href={href}
+    target="_blank"
     rel="noopener noreferrer"
     className="w-10 h-10 flex items-center justify-center border border-white/10 rounded-full text-gray-400 hover:text-white hover:border-accent hover:bg-accent/10 transition-all duration-300"
   >

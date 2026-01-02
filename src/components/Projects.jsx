@@ -22,7 +22,7 @@ const projects = [
     description: "Web Design, App Design",
     github: "https://github.com/Piyumal-Bandaranayake/WILD-LANKA-GO.git",
   },
-{  
+  {
     title: "Medco 360",
     category: "Website Design",
     description: "Web Design, App Design",
@@ -30,7 +30,7 @@ const projects = [
     github: "https://github.com/Piyumal-Bandaranayake/Medico360-online-Pharmacy-.git",
   },
 
-  
+
 ];
 
 const Projects = () => {
@@ -81,12 +81,12 @@ const Projects = () => {
                   </p>
                 </div>
 
-                
+
                 <div className="flex gap-3">
                   {project.github && (
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
+                    <a
+                      href={project.github}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="w-10 h-10 bg-white/10 hover:bg-accent border border-white/10 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg shadow-black/20"
                       title="View Code"
@@ -95,9 +95,9 @@ const Projects = () => {
                     </a>
                   )}
                   {project.live && (
-                    <a 
-                      href={project.live} 
-                      target="_blank" 
+                    <a
+                      href={project.live}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="w-10 h-10 bg-white/10 hover:bg-accent border border-white/10 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg shadow-black/20"
                       title="Live Demo"
@@ -120,17 +120,17 @@ const Projects = () => {
 
         {/* Explore Button */}
         <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           transition={{ duration: 0.8, delay: 0.4 }}
-           className="flex justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="flex justify-center"
         >
-          <Link 
+          <Link
             href="/projects"
             className="px-10 py-4 bg-white/5 border border-white/10 text-white text-[11px] font-black tracking-widest rounded-full hover:bg-accent hover:text-white transition-all duration-300 shadow-xl shadow-black/20 hover:scale-105 active:scale-95"
           >
-            EXPLORE OTHER PROJECTS →
+            EXPLORE OTHER PROJECTS
           </Link>
         </motion.div>
       </div>
