@@ -23,12 +23,13 @@ const projects = [
     github: "https://github.com/Piyumal-Bandaranayake/WILD-LANKA-GO.git",
   },
   {
-    title: "Medco 360",
+    title: "Medico 360",
     category: "Website Design",
     description: "Web Design, App Design",
     image: "/images/Medico 360.png",
     github: "https://github.com/Piyumal-Bandaranayake/Medico360-online-Pharmacy-.git",
   },
+
 
 
 ];
@@ -128,7 +129,7 @@ const Projects = () => {
         >
           <Link
             href="/projects"
-            className="px-10 py-4 bg-white/5 border border-white/10 text-white text-[11px] font-black tracking-widest rounded-full hover:bg-accent hover:text-white transition-all duration-300 shadow-xl shadow-black/20 hover:scale-105 active:scale-95"
+            className="px-10 py-4 bg-white border border-white text-black text-[11px] font-black tracking-widest rounded-full hover:bg-accent hover:border-accent hover:text-white transition-all duration-300 shadow-xl shadow-black/20 hover:scale-105 active:scale-95"
           >
             EXPLORE OTHER PROJECTS
           </Link>

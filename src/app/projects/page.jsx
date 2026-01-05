@@ -23,7 +23,7 @@ const allProjects = [
     image: "/images/Wild Lanka.jpg",
     github: "https://github.com/Piyumal-Bandaranayake/WILD-LANKA-GO.git",
   },
- 
+
   {
     title: "Medco 360",
     category: "Website Design",
@@ -37,6 +37,13 @@ const allProjects = [
     description: "UI UX Design for jewelry store",
     image: "/images/figma2.png",
     live: "https://www.figma.com/design/GrrfLDjMYC3MHTf32gggNQ/Jewelry?node-id=24-165&t=ner1D7RnUe06As9u-1"
+  },
+  {
+    title: "Property Pro",
+    category: "Website Design",
+    description: "Web Design, App Design",
+    image: "/images/propertypro.jpg",
+    github: "https://github.com/sewminiwijesiri/propertypro.git",
   }
 ];
 
@@ -44,7 +51,7 @@ const ProjectsPage = () => {
   return (
     <main className="min-h-screen bg-[#020617]">
       <Navbar />
-      
+
       <section className="pt-40 pb-24">
         <div className="container mx-auto px-6 md:px-12 lg:px-24">
           <motion.div
@@ -53,7 +60,7 @@ const ProjectsPage = () => {
             transition={{ duration: 0.8 }}
             className="mb-20"
           >
-            <Link 
+            <Link
               href="/"
               className="inline-flex items-center gap-2 text-accent text-xs font-black tracking-widest uppercase mb-8 hover:translate-x-[-5px] transition-transform"
             >
@@ -95,12 +102,12 @@ const ProjectsPage = () => {
                     </p>
                   </div>
 
-                  
+
                   <div className="flex gap-3">
                     {project.github && (
-                      <a 
-                        href={project.github} 
-                        target="_blank" 
+                      <a
+                        href={project.github}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="w-10 h-10 bg-white/10 hover:bg-accent border border-white/10 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg shadow-black/20"
                         title="View Code"
@@ -109,9 +116,9 @@ const ProjectsPage = () => {
                       </a>
                     )}
                     {project.live && (
-                      <a 
-                        href={project.live} 
-                        target="_blank" 
+                      <a
+                        href={project.live}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="w-10 h-10 bg-white/10 hover:bg-accent border border-white/10 rounded-full flex items-center justify-center text-white transition-all duration-300 hover:scale-110 shadow-lg shadow-black/20"
                         title="Live Demo"
