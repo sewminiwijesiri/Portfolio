@@ -44,6 +44,13 @@ const allProjects = [
     description: "Web Design, App Design",
     image: "/images/propertypro.jpg",
     github: "https://github.com/sewminiwijesiri/propertypro.git",
+  },
+  {
+    title: "WellTrack",
+    category: "Mobile App",
+    description: "Mobile App Design",
+    image: "/images/welltrack.png",
+    github: "https://github.com/sewminiwijesiri/WellTrack.git",
   }
 ];
 
