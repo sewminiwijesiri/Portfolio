@@ -8,6 +8,20 @@ import { Github, ExternalLink, ArrowLeft } from 'lucide-react';
 import { Navbar, Footer } from '@/components';
 
 const allProjects = [
+   {
+    title: "Uni Flow",
+    category: "web App",
+    description: "web App Design",
+    image: "/images/uniflow.jpeg",
+    github: "https://github.com/sewminiwijesiri/it3030-paf-2026-smart-KND-group11.git",
+  },
+   {
+    title: "Ask Mate",
+    category: "web App",
+    description: "web App Design",
+    image: "/images/askmate.jpeg",
+    github: "https://github.com/sewminiwijesiri/askmate.git",
+  },
   {
     title: "Re Goods",
     category: "Website Design",
