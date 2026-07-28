@@ -15,20 +15,23 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="relative py-20 bg-[#020617] overflow-hidden">
+    <section id="services" className="relative py-24 bg-[#030712] overflow-hidden">
+      {/* Background glowing elements */}
+      <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-accent/5 blur-[120px] rounded-full pointer-events-none" />
+
       <div className="container mx-auto px-6 md:px-12 lg:px-24">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-10"
+          className="mb-14"
         >
-          <span className="inline-block px-3 py-1 bg-accent/10 text-accent text-[10px] font-black tracking-widest rounded-md mb-4 uppercase">
-            SERVICES
+          <span className="inline-block px-4 py-1.5 bg-gradient-to-r from-accent/10 to-accent-secondary/10 border border-white/5 text-accent text-[10px] font-black tracking-widest rounded-lg mb-4 uppercase">
+            SERVICES & EXPERTISE
           </span>
           <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-4 leading-tight">
-            DESIGN <span className="text-accent">SERVICES</span> I AM PROVIDING
+            TECHNICAL <span className="text-gradient-neon">SOLUTIONS</span> I DELIVER
           </h2>
         </motion.div>
 
@@ -39,14 +42,17 @@ const Services = () => {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: idx * 0.1 }}
-              className="p-8 bg-white/5 border border-white/10 rounded-[2rem] hover:bg-white/10 transition-all duration-300 group"
+              transition={{ duration: 0.8, delay: idx * 0.08 }}
+              className="glass-card p-8 rounded-[2rem] group relative overflow-hidden cursor-pointer"
             >
-              <div className="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
+              {/* Card Inner Hover Glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-accent-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              
+              <div className="w-12 h-12 bg-gradient-to-tr from-accent/15 to-accent-secondary/10 border border-white/10 rounded-xl flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-all duration-300">
                 {React.cloneElement(service.icon, { size: 24 })}
               </div>
-              <h4 className="text-lg font-black text-white mb-2 uppercase tracking-tighter">{service.name}</h4>
-              <p className="text-gray-400 text-xs font-medium leading-relaxed">
+              <h4 className="text-lg font-black text-white mb-2 uppercase tracking-tighter group-hover:text-accent transition-colors duration-300">{service.name}</h4>
+              <p className="text-gray-400 text-xs font-semibold leading-relaxed">
                 {service.items}
               </p>
             </motion.div>

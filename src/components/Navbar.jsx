@@ -57,16 +57,16 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-[#020617]/90 backdrop-blur-md py-4 shadow-lg"
-          : "bg-transparent py-8"
+          ? "top-4 left-4 right-4 md:left-8 md:right-8 bg-[#030712]/80 backdrop-blur-lg border border-white/5 py-4 rounded-2xl shadow-2xl shadow-black/40"
+          : "top-0 left-0 right-0 bg-transparent py-8"
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center shadow-lg shadow-accent/20 group-hover:rotate-6 transition-transform overflow-hidden">
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="w-10 h-10 bg-gradient-to-tr from-accent to-accent-secondary rounded-xl flex items-center justify-center shadow-lg shadow-accent/20 group-hover:rotate-6 transition-transform duration-300 overflow-hidden">
             <Image 
               src="/icon.png" 
               alt="SW Logo" 
@@ -75,29 +75,27 @@ const Navbar = () => {
               className="object-cover"
             />
           </div>
-          <span className="text-white font-black tracking-widest text-xl">
+          <span className="text-white font-black tracking-[0.25em] text-sm md:text-base transition-colors group-hover:text-accent">
             SEWMINI WIJESIRI
           </span>
         </Link>
 
-
-
         {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className={`text-[11px] font-bold tracking-[0.2em] transition-colors hover:text-accent ${
-                activeSection ===
-                link.href.replace("/#", "").replace("/", "home")
-                  ? "text-accent"
-                  : "text-gray-300"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+        <div className="hidden lg:flex items-center gap-8">
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.replace("/#", "").replace("/", "home");
+            return (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={`nav-link text-[11px] font-bold tracking-[0.2em] transition-colors hover:text-white ${
+                  isActive ? "text-accent active" : "text-gray-400"
+                }`}
+              >
+                {link.name}
+              </Link>
+            );
+          })}
         </div>
 
         {/* CTA Button */}
@@ -108,7 +106,7 @@ const Navbar = () => {
                 .getElementById("contact")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="px-8 py-3 bg-accent hover:bg-accent/90 text-white text-[11px] font-bold tracking-widest rounded-full transition-all shadow-lg shadow-accent/20 hover:scale-105 active:scale-95"
+            className="px-8 py-3 bg-gradient-to-r from-accent to-accent-secondary hover:brightness-110 text-white text-[10px] font-black tracking-widest rounded-full transition-all shadow-lg shadow-accent/20 hover:scale-105 active:scale-95 cursor-pointer"
           >
             LET'S TALK
           </button>
@@ -127,18 +125,19 @@ const Navbar = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 right-0 bg-[#020617] border-t border-white/10 p-6 lg:hidden"
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            className="absolute top-[calc(100%+12px)] left-0 right-0 mx-4 p-6 bg-[#030712]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl lg:hidden"
           >
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-5">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-sm font-bold tracking-widest text-gray-300 hover:text-accent"
+                  className="text-xs font-bold tracking-[0.2em] text-gray-300 hover:text-accent transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -150,7 +149,7 @@ const Navbar = () => {
                     .getElementById("contact")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
-                className="w-full py-4 bg-accent text-white text-xs font-bold tracking-widest rounded-xl"
+                className="w-full py-3.5 bg-gradient-to-r from-accent to-accent-secondary text-white text-[10px] font-black tracking-widest rounded-xl shadow-lg shadow-accent/20 cursor-pointer"
               >
                 LET'S TALK
               </button>
