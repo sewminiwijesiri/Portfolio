@@ -11,14 +11,14 @@ const projects = [
     title: "Askmate",
     category: "Website Design",
     description: "Web Design, App Design",
-    image: "/images/Askmate.jpeg",
+    image: "/images/askmate.jpeg",
     github: "https://github.com/sewminiwijesiri/askmate.git",
   },
   {
     title: "UniFlow",
     category: "Website Design",
     description: "App Design, Web Design",
-    image: "/images/UniFlow.jpeg",
+    image: "/images/uniflow.jpeg",
     github: "https://github.com/sewminiwijesiri/it3030-paf-2026-smart-KND-group11.git",
   },
   {
