@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Github, ExternalLink, ArrowLeft } from 'lucide-react';
-import { Navbar, Footer } from '@/components';
+
 
 const allProjects = [
   {
@@ -78,9 +78,7 @@ const allProjects = [
 
 const ProjectsPage = () => {
   return (
-    <main className="min-h-screen bg-[#030712]">
-      <Navbar />
-
+    <main className="min-h-screen bg-[#030712] bg-dot-pattern">
       <section className="pt-40 pb-24 relative overflow-hidden">
         {/* Ambient glows */}
         <div className="absolute top-40 right-0 w-[500px] h-[500px] bg-accent/5 blur-[150px] rounded-full pointer-events-none" />
@@ -95,14 +93,14 @@ const ProjectsPage = () => {
           >
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-accent text-xs font-black tracking-[0.2em] uppercase mb-8 hover:-translate-x-1.5 transition-transform duration-300"
+              className="inline-flex items-center gap-2 text-accent text-xs font-heading font-black tracking-[0.25em] uppercase mb-8 hover:-translate-x-1.5 transition-transform duration-300"
             >
               <ArrowLeft size={16} /> BACK TO HOME
             </Link>
-            <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-6 uppercase leading-none">
+            <h1 className="text-5xl md:text-7xl font-heading font-black text-white tracking-tighter mb-6 uppercase leading-none">
               ALL <span className="text-gradient-neon">PROJECTS</span>
             </h1>
-            <p className="text-gray-400 text-base md:text-lg max-w-2xl leading-relaxed">
+            <p className="text-slate-400 text-base md:text-lg max-w-2xl leading-relaxed font-medium">
               A deeper look into my technical journey and digital craftsmanship. Each project represents a unique challenge and solution.
             </p>
           </motion.div>
@@ -114,31 +112,29 @@ const ProjectsPage = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.05 }}
-                className="glass-card rounded-[2.5rem] overflow-hidden group cursor-pointer relative"
+                className="glass-card rounded-[2rem] overflow-hidden group cursor-pointer relative"
               >
                 {/* Image Preview Container */}
-                <div className="p-4 h-[280px]">
-                  <div className="relative h-full w-full rounded-[2rem] overflow-hidden bg-[#070a13] border border-white/5">
-                    {/* Subtle overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10 pointer-events-none" />
+                <div className="relative h-[220px] w-full overflow-hidden bg-[#070a13] border-b border-white/5">
+                  {/* Subtle overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#030712]/80 to-transparent z-10 pointer-events-none" />
 
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                  </div>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
                 </div>
 
                 {/* Details */}
-                <div className="px-8 pb-8 pt-2 flex items-center justify-between">
+                <div className="px-6 pb-6 pt-6 flex items-center justify-between">
                   <div>
-                    <span className="inline-block px-2.5 py-0.5 bg-white/[0.04] border border-white/5 text-accent text-[8px] font-black tracking-wider rounded-md mb-2 uppercase">
+                    <span className="inline-block px-2.5 py-1 bg-white/[0.03] border border-white/5 text-accent text-[8px] font-heading font-black tracking-wider rounded-md mb-2 uppercase">
                       {project.category}
                     </span>
-                    <h4 className="text-lg font-black text-white mb-1 uppercase tracking-tighter group-hover:text-accent transition-colors duration-300">{project.title}</h4>
-                    <p className="text-gray-400 text-[10px] font-bold tracking-wider uppercase">
+                    <h4 className="text-base font-heading font-black text-white mb-1 uppercase tracking-tighter group-hover:text-accent transition-colors duration-300">{project.title}</h4>
+                    <p className="text-slate-400 text-[9px] font-heading font-black tracking-wider uppercase">
                       {project.description}
                     </p>
                   </div>
@@ -150,10 +146,10 @@ const ProjectsPage = () => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-white/[0.03] hover:bg-gradient-to-tr hover:from-accent hover:to-accent-secondary border border-white/10 hover:border-transparent rounded-full flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 hover:scale-110 shadow-lg shadow-black/25"
+                        className="w-9 h-9 bg-white/[0.02] hover:bg-gradient-to-tr hover:from-accent hover:to-accent-secondary border border-white/10 hover:border-transparent rounded-full flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300 hover:scale-110 shadow-lg shadow-black/25"
                         title="View Code"
                       >
-                        <Github size={18} />
+                        <Github size={16} />
                       </a>
                     )}
                     {project.live && (
@@ -161,10 +157,10 @@ const ProjectsPage = () => {
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-10 h-10 bg-white/[0.03] hover:bg-gradient-to-tr hover:from-accent hover:to-accent-secondary border border-white/10 hover:border-transparent rounded-full flex items-center justify-center text-gray-300 hover:text-white transition-all duration-300 hover:scale-110 shadow-lg shadow-black/25"
+                        className="w-9 h-9 bg-white/[0.02] hover:bg-gradient-to-tr hover:from-accent hover:to-accent-secondary border border-white/10 hover:border-transparent rounded-full flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300 hover:scale-110 shadow-lg shadow-black/25"
                         title="Live Demo"
                       >
-                        <ExternalLink size={18} />
+                        <ExternalLink size={16} />
                       </a>
                     )}
                   </div>
@@ -174,8 +170,6 @@ const ProjectsPage = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 };

@@ -1,10 +1,15 @@
-import { Inter } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components";
+import { Navbar, Footer, CustomCursor, BackgroundGlow } from "@/components";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
 });
 
 export const metadata = {
@@ -42,7 +47,7 @@ export default function RootLayout({ children }) {
                     mutations.forEach((mutation) => {
                       if (mutation.type === 'childList') {
                         mutation.addedNodes.forEach((node) => {
-                          if (node.nodeType === 1) {
+                           if (node.nodeType === 1) {
                             if (node.hasAttribute('bis_skin_checked')) {
                               node.removeAttribute('bis_skin_checked');
                             }
@@ -69,16 +74,19 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body
-        className={`${inter.variable} antialiased bg-white dark:bg-black min-h-screen flex flex-col`}
+        className={`${inter.variable} ${outfit.variable} antialiased bg-[#020617] text-slate-100 min-h-screen flex flex-col`}
         suppressHydrationWarning
       >
+        <CustomCursor />
+        <BackgroundGlow />
         <Navbar />
-        <main className="flex-grow">
+        <main className="flex-grow relative z-10">
           {children}
         </main>
-      
+        <Footer />
       </body>
     </html>
   );
 }
+
 
